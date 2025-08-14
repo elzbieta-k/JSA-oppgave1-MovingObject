@@ -7,7 +7,6 @@
 body {
   position: relative;
   overflow: hidden;
-  background-color: #141852;
 }
 .object {
   height: 50px;
@@ -15,7 +14,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: blueviolet;
+  background-color: transparent;
   transition: all 0.1s;
 }
 
@@ -23,29 +22,82 @@ body {
   position: fixed;
   inset: 0;
   overflow: hidden;
-  background: #000;
+  background: linear-gradient(
+    0.25turn,
+    #855988,
+    #6b4984,
+    #483475,
+    #2b2f77,
+    #141852,
+    #070b34
+  );
 }
 
 .stars::before,
+stars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: 5vw 10vh white, 15vw 20vh white, 25vw 70vh white, 35vw 50vh white,
+    45vw 90vh white, 55vw 15vh white, 65vw 40vh white, 75vw 80vh white,
+    85vw 30vh white, 95vw 60vh white, 10vw 85vh white, 20vw 5vh white,
+    38vw 24vh white, 30vw 25vh white, 40vw 75vh white, 50vw 35vh white,
+    60vw 55vh white, 70vw 10vh white, 80vw 65vh white, 90vw 45vh white,
+    100vw 20vh white;
+  animation: sparkling 1s ease-in-out infinite;
+}
+
+@keyframes sparkling {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* .stars::before,
 .stars::after {
   content: "";
   position: absolute;
   left: 0;
-  top: -100vh; /* start above view */
+  top: -100vh;
   width: 2px;
   height: 2px;
   background: transparent;
-  box-shadow: 20vw 10vh #fff, 40vw 30vh #fff, 70vw 20vh #fff, 10vw 80vh #fff,
-    55vw 60vh #fff, 85vw 50vh #fff; /* add many more! */
+  box-shadow: 5vw 10vh white, 15vw 20vh white, 25vw 70vh white, 35vw 50vh white,
+    45vw 90vh white, 55vw 15vh white, 65vw 40vh white, 75vw 80vh white,
+    85vw 30vh white, 95vw 60vh white, 10vw 85vh white, 20vw 5vh white,
+    30vw 25vh white, 40vw 75vh white, 50vw 35vh white, 60vw 55vh white,
+    70vw 10vh white, 80vw 65vh white, 90vw 45vh white, 100vw 20vh white;
   animation: fall 8s linear infinite;
 }
 
 .stars::after {
   animation-delay: 4s;
-} /* offset for seamless loop */
+} 
 
 @keyframes fall {
   to {
     transform: translateY(200vh);
-  } /* drop past the screen */
+  } 
+} */
+
+.message {
+  z-index: 1000;
+}
+
+p {
+  color: white;
+}
+
+img {
+  height: 100%;
+  width: 100%;
 }
