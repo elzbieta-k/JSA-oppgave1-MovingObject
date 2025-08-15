@@ -49,7 +49,7 @@ stars::after {
     10vw 85vh white, 20vw 5vh white, 38vw 24vh white, 30vw 25vh white,
     40vw 75vh white, 50vw 35vh white, 60vw 55vh white, 70vw 10vh white,
     80vw 65vh white, 90vw 45vh white, 100vw 20vh white;
-  animation: sparkling 3s ease-in-out infinite;
+  animation: sparkling 1s ease-in-out infinite;
 }
 
 @keyframes sparkling {
@@ -57,7 +57,7 @@ stars::after {
     opacity: 1;
   }
   50% {
-    opacity: 0.3;
+    opacity: 0.2;
   }
   100% {
     opacity: 1;
