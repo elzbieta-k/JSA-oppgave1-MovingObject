@@ -7,10 +7,11 @@
 body {
   position: relative;
   overflow: hidden;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 .object {
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
   position: absolute;
   top: 0;
   left: 0;
@@ -39,16 +40,16 @@ stars::after {
   position: absolute;
   left: 0;
   top: 0;
-  width: 3px;
-  height: 3px;
+  width: 4px;
+  height: 4px;
   background: transparent;
   box-shadow: 5vw 10vh white, 15vw 20vh white, 25vw 70vh white, 35vw 50vh white,
-    45vw 90vh white, 55vw 15vh white, 65vw 40vh white, 75vw 80vh white,
-    85vw 30vh white, 95vw 60vh white, 10vw 85vh white, 20vw 5vh white,
-    38vw 24vh white, 30vw 25vh white, 40vw 75vh white, 50vw 35vh white,
-    60vw 55vh white, 70vw 10vh white, 80vw 65vh white, 90vw 45vh white,
-    100vw 20vh white;
-  animation: sparkling 1s ease-in-out infinite;
+    45vw 90vh white, 10vw 49vh white, 23vw 45vh white, 55vw 15vh white,
+    65vw 40vh white, 75vw 80vh white, 85vw 30vh white, 95vw 60vh white,
+    10vw 85vh white, 20vw 5vh white, 38vw 24vh white, 30vw 25vh white,
+    40vw 75vh white, 50vw 35vh white, 60vw 55vh white, 70vw 10vh white,
+    80vw 65vh white, 90vw 45vh white, 100vw 20vh white;
+  animation: sparkling 3s ease-in-out infinite;
 }
 
 @keyframes sparkling {
@@ -56,48 +57,37 @@ stars::after {
     opacity: 1;
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.3;
   }
   100% {
     opacity: 1;
   }
 }
-/* .stars::before,
-.stars::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -100vh;
-  width: 2px;
-  height: 2px;
-  background: transparent;
-  box-shadow: 5vw 10vh white, 15vw 20vh white, 25vw 70vh white, 35vw 50vh white,
-    45vw 90vh white, 55vw 15vh white, 65vw 40vh white, 75vw 80vh white,
-    85vw 30vh white, 95vw 60vh white, 10vw 85vh white, 20vw 5vh white,
-    30vw 25vh white, 40vw 75vh white, 50vw 35vh white, 60vw 55vh white,
-    70vw 10vh white, 80vw 65vh white, 90vw 45vh white, 100vw 20vh white;
-  animation: fall 8s linear infinite;
-}
 
-.stars::after {
-  animation-delay: 4s;
-} 
-
-@keyframes fall {
-  to {
-    transform: translateY(200vh);
-  } 
-} */
-
-.message {
-  z-index: 1000;
-}
-
-p {
+h3 {
   color: white;
+  text-transform: uppercase;
+  font-size: 1.5rem;
 }
 
 img {
   height: 100%;
   width: 100%;
+}
+
+.message {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 20px;
+}
+
+.alien1,
+.alien2,
+.alien3 {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
