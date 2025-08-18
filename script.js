@@ -3,10 +3,13 @@ const object = document.querySelector(".object");
 const alien1 = document.querySelector(".alien1");
 const alien2 = document.querySelector(".alien2");
 const alien3 = document.querySelector(".alien3");
-
 const aliens = [alien1, alien2, alien3];
 
 const message = document.querySelector("h3");
+
+//Getting height and width of an "alien" object
+const alienHeight = alien1.offsetHeight;
+const alienWidth = alien1.offsetWidth;
 
 //Setting starting position of the object to 0
 let startingPositionX = 0;
@@ -23,12 +26,14 @@ const move = 10;
 const windowInnerHeight = document.documentElement.clientHeight;
 const windowInnerWidth = document.documentElement.clientWidth;
 
-//Function that set display of alien element to block and give them random position
+//Function that set display of "alien" element to block and give them random position
 const init = () => {
   aliens.forEach((alien) => {
     alien.style.display = "block";
-    alien.style.top = Math.floor(Math.random() * windowInnerHeight) + "px";
-    alien.style.left = Math.floor(Math.random() * windowInnerWidth) + "px";
+    alien.style.top =
+      Math.floor(Math.random() * (windowInnerHeight - alienHeight)) + "px";
+    alien.style.left =
+      Math.floor(Math.random() * (windowInnerWidth - alienWidth)) + "px";
   });
 };
 
